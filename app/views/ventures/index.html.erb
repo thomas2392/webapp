@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <h1>Empreendimentos</h1>
+
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Readjust</th>
+        <th scope="col">Street</th>
+        <th scope="col">Neighborhood</th>
+        <th scope="col">City</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @ventures.each do |venture| %>
+        <tr>
+          <td><%= venture.name %></td>
+          <td><%= venture.readjust %></td>
+          <td><%= venture.street %></td>
+          <td><%= venture.neighborhood %></td>
+          <td><%= venture.city %></td>
+          <td><%= link_to 'Edit', edit_venture_path(venture) %></td>
+          <td><%= link_to 'Destroy', venture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+
+  <br>
+  
+  
+  <%= link_to 'Novo', new_venture_path, :class=>"btn create_btn float-right" %>
+</div>

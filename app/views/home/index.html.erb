@@ -1,0 +1,11 @@
+<div class="container h-100">
+  <div class="d-flex justify-content-center h-100">
+    <div class="d-flex justify-content-center form_container">
+      <% if current_user %>
+        <p>Bem vindo ao sistema de Contrato de Loteamento, <%= current_user.email %>.</p>
+      <% else %>
+        <%= render partial: "/users/login" %>
+      <% end %>
+    </div>
+  </div>
+</div>

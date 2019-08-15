@@ -1,0 +1,47 @@
+<%= form_with(model: contract, local: true) do |form| %>
+  <% if contract.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(contract.errors.count, "error") %> prohibited this contract from being saved:</h2>
+
+      <ul>
+      <% contract.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="input-group mb-3">
+    <%= form.label 'number', class: 'input-group-text' %>
+    <%= form.text_field :number, class: 'form-control input_pass' %>
+  </div>
+
+  <div class="input-group mb-3">
+    <%= form.label 'total', class: 'input-group-text' %>
+    <%= form.text_field :total, class: 'form-control input_pass' %>
+  </div>
+
+  <div class="input-group mb-3">
+    <%= form.label 'date', class: 'input-group-text' %>
+    <%= form.text_field :date, class: 'form-control input_pass' %>
+  </div>
+
+  <div class="input-group mb-3">
+    <%= form.label 'client', class: 'input-group-text' %>
+    <%= form.text_field :client, class: 'form-control input_pass' %>
+  </div>
+
+  <div class="input-group mb-3">
+    <%= form.label 'formofpayment', class: 'input-group-text' %>
+    <%= form.text_field :formofpayment, class: 'form-control input_pass' %>
+  </div>
+
+  <div class="input-group mb-3">
+    <%= form.label 'allotment_id', class: 'input-group-text' %>
+    <%= collection_select(:contract, :allotment_id, @loteamentos, :id, :name) %>
+  </div>
+
+  <div class="d-flex justify-content-center mt-3 login_container">
+    <%= form.submit("Criar", :id=>"button", :class=>"btn login_btn", :name=>"submit") %>
+  </div>
+<% end %>

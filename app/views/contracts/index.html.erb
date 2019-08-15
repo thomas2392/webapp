@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <h1>Contratos</h1>
+
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Number</th>
+        <th scope="col">Total</th>
+        <th scope="col">Date</th>
+        <th scope="col">Client</th>
+        <th scope="col">Formofpayment</th>
+        <th scope="col">Allotment</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @contracts.each do |contract| %>
+        <tr>
+          <td><%= contract.number %></td>
+          <td><%= contract.total %></td>
+          <td><%= contract.date %></td>
+          <td><%= contract.client %></td>
+          <td><%= contract.formofpayment %></td>
+          <td><%= contract.allotment.name %></td>
+          <td><%= link_to 'Edit', edit_contract_path(contract) %></td>
+          <td><%= link_to 'Destroy', contract, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'Novo', new_contract_path, :class=>"btn create_btn float-right" %>
+</div>

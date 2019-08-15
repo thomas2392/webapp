@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @venture.name %>
+</p>
+
+<p>
+  <strong>Readjust:</strong>
+  <%= @venture.readjust %>
+</p>
+
+<p>
+  <strong>Street:</strong>
+  <%= @venture.street %>
+</p>
+
+<p>
+  <strong>Neighborhood:</strong>
+  <%= @venture.neighborhood %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @venture.city %>
+</p>
+
+<%= link_to 'Edit', edit_venture_path(@venture) %> |
+<%= link_to 'Back', ventures_path %>

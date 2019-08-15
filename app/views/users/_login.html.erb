@@ -1,0 +1,26 @@
+<div class="user_card">
+    <p id="alert"><%= alert %></p>
+    <div class="d-flex justify-content-center">
+        <div class="brand_logo_container">
+            <%= image_tag("https://cdn.freebiesupply.com/logos/large/2x/pinterest-circle-logo-png-transparent.png", class:"brand_logo", alt: "Logo") %>
+        </div>
+    </div>
+    <%= form_tag sessions_path do |form| %>
+    <div class="input-group mb-3">
+        <%= label_tag 'email', 'Email', class: 'input-group-text' %>
+        <%= text_field_tag :email, 'Email', class: 'form-control input_pass' %>
+    </div> 
+    <div class="input-group mb-3">
+        <%= label_tag 'password', 'Senha', class: 'input-group-text' %>
+        <%= password_field_tag :password, 'Senha', class:'form-control input_pass' %>
+    </div>
+    <div class="d-flex justify-content-center mt-3 login_container">
+        <%= submit_tag("Login", :id=>"button", :class=>"btn login_btn", :name=>"submit") %>
+    </div>
+    <div class="mt-4">
+        <div class="d-flex justify-content-center links">
+           Já possui conta ? <a href="<%= signup_path %>" class="ml-2">Sign Up</a>
+        </div>
+    </div>
+    <% end %>
+</div>

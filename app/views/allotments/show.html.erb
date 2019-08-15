@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @allotment.name %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @allotment.number %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @allotment.value %>
+</p>
+
+<p>
+  <strong>Venture:</strong>
+  <%= @allotment.venture %>
+</p>
+
+<%= link_to 'Edit', edit_allotment_path(@allotment) %> |
+<%= link_to 'Back', allotments_path %>

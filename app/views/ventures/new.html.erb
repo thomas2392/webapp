@@ -1,0 +1,12 @@
+<div class="container h-200">
+  <div class="d-flex justify-content-center h-200">
+    <div class="d-flex justify-content-center form_container">
+        <div class="user_card">
+            <h1>Empreendimento</h1>
+
+            <%= render 'form', venture: @venture %>
+            <%= link_to 'Back', ventures_path, :class=>"btn back_btn" %>
+        </div>
+    </div>
+  </div>
+</div>

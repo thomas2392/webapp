@@ -1,0 +1,12 @@
+<div class="container h-200">
+  <div class="d-flex justify-content-center h-200">
+    <div class="d-flex justify-content-center form_container">
+        <div class="user_card">
+            <h1>Loteamento</h1>
+
+            <%= render 'form', allotment: @allotment %>
+            <%= link_to 'Back', allotments_path, :class=>"btn back_btn" %>
+        </div>
+    </div>
+  </div>
+</div>
